@@ -1,0 +1,13 @@
+E:\CProjects\Chatbot_HM_11\Chatbot_HM_11\bin\Debug\Chatbot_HM_11.exe.config
+E:\CProjects\Chatbot_HM_11\Chatbot_HM_11\obj\Debug\Chatbot_HM_11.csprojResolveAssemblyReference.cache
+E:\CProjects\Chatbot_HM_11\Chatbot_HM_11\obj\Debug\Chatbot_HM_11.Form1.resources
+E:\CProjects\Chatbot_HM_11\Chatbot_HM_11\obj\Debug\Chatbot_HM_11.Properties.Resources.resources
+E:\CProjects\Chatbot_HM_11\Chatbot_HM_11\obj\Debug\Chatbot_HM_11.csproj.GenerateResource.Cache
+E:\CProjects\Chatbot_HM_11\Chatbot_HM_11\bin\Debug\Chatbot_HM_11.exe
+E:\CProjects\Chatbot_HM_11\Chatbot_HM_11\bin\Debug\Chatbot_HM_11.pdb
+E:\CProjects\Chatbot_HM_11\Chatbot_HM_11\bin\Debug\Newtonsoft.Json.dll
+E:\CProjects\Chatbot_HM_11\Chatbot_HM_11\bin\Debug\NUniversalCharDet.dll
+E:\CProjects\Chatbot_HM_11\Chatbot_HM_11\bin\Debug\Newtonsoft.Json.xml
+E:\CProjects\Chatbot_HM_11\Chatbot_HM_11\bin\Debug\NUniversalCharDet.pdb
+E:\CProjects\Chatbot_HM_11\Chatbot_HM_11\obj\Debug\Chatbot_HM_11.exe
+E:\CProjects\Chatbot_HM_11\Chatbot_HM_11\obj\Debug\Chatbot_HM_11.pdb
