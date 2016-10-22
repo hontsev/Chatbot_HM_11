@@ -1,0 +1,13 @@
+E:\CProjects\HM_11_qq\TestForm\obj\Debug\TestForm.csprojResolveAssemblyReference.cache
+E:\CProjects\HM_11_qq\TestForm\obj\Debug\TestForm.Form1.resources
+E:\CProjects\HM_11_qq\TestForm\obj\Debug\TestForm.Properties.Resources.resources
+E:\CProjects\HM_11_qq\TestForm\obj\Debug\TestForm.csproj.GenerateResource.Cache
+E:\CProjects\HM_11_qq\TestForm\bin\Debug\TestForm.exe.config
+E:\CProjects\HM_11_qq\TestForm\bin\Debug\TestForm.exe
+E:\CProjects\HM_11_qq\TestForm\bin\Debug\TestForm.pdb
+E:\CProjects\HM_11_qq\TestForm\bin\Debug\HM_11_qq.dll
+E:\CProjects\HM_11_qq\TestForm\bin\Debug\Flexlive.CQP.Framework.dll
+E:\CProjects\HM_11_qq\TestForm\bin\Debug\HM_11_qq.pdb
+E:\CProjects\HM_11_qq\TestForm\bin\Debug\Flexlive.CQP.Framework.xml
+E:\CProjects\HM_11_qq\TestForm\obj\Debug\TestForm.exe
+E:\CProjects\HM_11_qq\TestForm\obj\Debug\TestForm.pdb
