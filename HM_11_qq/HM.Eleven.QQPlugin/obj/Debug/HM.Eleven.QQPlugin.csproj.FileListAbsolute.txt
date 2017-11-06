@@ -1,6 +1,0 @@
-D:\CProjects\HM_11\HM_11_qq\HM.Eleven.QQPlugin\bin\Debug\HM.Eleven.QQPlugin.dll
-D:\CProjects\HM_11\HM_11_qq\HM.Eleven.QQPlugin\bin\Debug\HM.Eleven.QQPlugin.pdb
-D:\CProjects\HM_11\HM_11_qq\HM.Eleven.QQPlugin\bin\Debug\Autofac.dll
-D:\CProjects\HM_11\HM_11_qq\HM.Eleven.QQPlugin\bin\Debug\Newbe.CQP.Framework.dll
-D:\CProjects\HM_11\HM_11_qq\HM.Eleven.QQPlugin\obj\Debug\HM.Eleven.QQPlugin.dll
-D:\CProjects\HM_11\HM_11_qq\HM.Eleven.QQPlugin\obj\Debug\HM.Eleven.QQPlugin.pdb
