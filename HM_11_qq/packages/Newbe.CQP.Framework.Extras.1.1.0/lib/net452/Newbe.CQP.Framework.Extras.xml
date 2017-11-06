@@ -1,0 +1,40 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Newbe.CQP.Framework.Extras</name>
+    </assembly>
+    <members>
+        <member name="T:Newbe.CQP.Framework.Extensions.ExtrasCoolApiExtensions">
+            <summary>
+            对ICoolApi的额外扩展
+            </summary>
+        </member>
+        <member name="M:Newbe.CQP.Framework.Extensions.ExtrasCoolApiExtensions.GetGroupList(Newbe.CQP.Framework.ICoolQApi)">
+            <summary>
+            获取群列表
+            </summary>
+            <param name="api"></param>
+            <returns></returns>
+        </member>
+        <member name="T:Newbe.CQP.Framework.Extensions.GroupInfo">
+            <summary>
+            群基本信息
+            </summary>
+        </member>
+        <member name="P:Newbe.CQP.Framework.Extensions.GroupInfo.GroupNumber">
+            <summary>
+            群号
+            </summary>
+        </member>
+        <member name="P:Newbe.CQP.Framework.Extensions.GroupInfo.GroupName">
+            <summary>
+            群名称
+            </summary>
+        </member>
+        <member name="P:Newbe.CQP.Framework.Extensions.GroupInfo.OwnerNumber">
+            <summary>
+            群主QQ
+            </summary>
+        </member>
+    </members>
+</doc>

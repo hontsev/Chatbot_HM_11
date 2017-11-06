@@ -7,11 +7,10 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using HM_11_qq;
-using HM_11_qq.Helper;
-using HM_11_qq.Struct;
+using HM.Eleven.QQPlugins;
 
-namespace TestForm
+
+namespace HM.Eleven.QQPlugins.Test
 {
     public partial class Form1 : Form
     {
@@ -27,20 +26,21 @@ namespace TestForm
         private void init()
         {
             cc = new ChatController();
-            cc.outputEvent = new ChatController.sendChatMessageDelegate(printOutput);
+            cc.outputQQEvent = new ChatController.sendQQChatMessage(printOutput);
+            //cc.outputEvent = new ChatController.sendChatMessageDelegate(printOutput);
             cc.start();
         }
 
-        private void printOutput(string str)
+        private void printOutput(QQInfo info)
         {
             if (textBox1.InvokeRequired)
             {
-                sendStringDelegate printEvent = new sendStringDelegate(printOutput);
-                Invoke(printEvent, (object)str);
+                ChatController.sendQQChatMessage printEvent = new ChatController.sendQQChatMessage(printOutput);
+                Invoke(printEvent, (object)info);
             }
             else
             {
-                textBox1.AppendText("HM_11:" + str + "\r\n");
+                textBox1.AppendText("\r\nHM_11 : " + info.info + "\r\n");
             }
         }
 
@@ -53,7 +53,7 @@ namespace TestForm
             }
             else
             {
-                textBox1.AppendText("User:" + str + "\r\n");
+                textBox1.AppendText("\r\nUser : " + str + "\r\n");
             }
         }
 
@@ -61,7 +61,7 @@ namespace TestForm
         {
             string inputStr = textBox2.Text;
             textBox2.Text = "";
-            cc.input(inputStr);
+            cc.input(new QQInfo(inputStr, 0));
             printInput(inputStr);
         }
 
@@ -90,6 +90,11 @@ namespace TestForm
         private void Form1_Shown(object sender, EventArgs e)
         {
             textBox2.Focus();
+        }
+
+        private void Form1_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            Environment.Exit(0);
         }
     }
 }

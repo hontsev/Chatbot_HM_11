@@ -1,6 +1,0 @@
-E:\CProjects\HM_11_qq\HM_11_qq\bin\Debug\HM_11_qq.dll
-E:\CProjects\HM_11_qq\HM_11_qq\bin\Debug\HM_11_qq.pdb
-E:\CProjects\HM_11_qq\HM_11_qq\bin\Debug\Flexlive.CQP.Framework.dll
-E:\CProjects\HM_11_qq\HM_11_qq\bin\Debug\Flexlive.CQP.Framework.xml
-E:\CProjects\HM_11_qq\HM_11_qq\obj\Debug\HM_11_qq.dll
-E:\CProjects\HM_11_qq\HM_11_qq\obj\Debug\HM_11_qq.pdb

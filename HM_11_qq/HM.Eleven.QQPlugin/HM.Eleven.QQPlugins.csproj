@@ -1,0 +1,106 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="..\packages\Newbe.CQP.Framework.Tools.MSBuildTask.1.1.0\build\Newbe.CQP.Framework.Tools.MSBuildTask.props" Condition="Exists('..\packages\Newbe.CQP.Framework.Tools.MSBuildTask.1.1.0\build\Newbe.CQP.Framework.Tools.MSBuildTask.props')" />
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{53B67B7A-EFB0-437E-9A94-64FD2E167ECF}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>HM.Eleven.QQPlugins</RootNamespace>
+    <AssemblyName>HM.Eleven.QQPlugins</AssemblyName>
+    <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <NuGetPackageImportStamp>
+    </NuGetPackageImportStamp>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Autofac, Version=4.6.2.0, Culture=neutral, PublicKeyToken=17863af14b0044da, processorArchitecture=MSIL">
+      <HintPath>..\packages\Autofac.4.6.2\lib\net45\Autofac.dll</HintPath>
+    </Reference>
+    <Reference Include="HtmlAgilityPack, Version=1.6.2.0, Culture=neutral, PublicKeyToken=bd319b19eaf3b43a, processorArchitecture=MSIL">
+      <HintPath>..\packages\HtmlAgilityPack.1.6.2\lib\Net45\HtmlAgilityPack.dll</HintPath>
+    </Reference>
+    <Reference Include="Newbe.CQP.Framework, Version=1.2.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Newbe.CQP.Framework.1.2.0\lib\net452\Newbe.CQP.Framework.dll</HintPath>
+    </Reference>
+    <Reference Include="Newbe.CQP.Framework.Extras, Version=1.1.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Newbe.CQP.Framework.Extras.1.1.0\lib\net452\Newbe.CQP.Framework.Extras.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json, Version=10.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\packages\Newtonsoft.Json.10.0.3\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="RestSharp, Version=105.2.3.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\RestSharp.105.2.3\lib\net452\RestSharp.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.IO.Compression.FileSystem" />
+    <Reference Include="System.Numerics" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Actor\BaiduSearchActor.cs" />
+    <Compile Include="Actor\ItemParser.cs" />
+    <Compile Include="Actor\LearnActor.cs" />
+    <Compile Include="ChatController.cs" />
+    <Compile Include="Helper\CoolQHelper.cs" />
+    <Compile Include="Helper\IOHelper.cs" />
+    <Compile Include="Helper\WebConnectHelper.cs" />
+    <Compile Include="MainController.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Struct\Link.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="app.config" />
+    <None Include="Newbe.CQP.Framework.props" />
+    <None Include="Newbe.CQP.Framework\ForPlugin\HM.Eleven.QQPlugins.json" />
+    <None Include="Newbe.CQP.Framework\ForPlugin\Newbe.CQP.Framework.json" />
+    <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Newbe.CQP.Framework\ForPlugin\HM.Eleven.QQPlugins.dll" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Newbe.CQP.Framework\ForMain\Autofac.dll" />
+    <None Include="Newbe.CQP.Framework\ForMain\Newbe.CQP.Framework.dll" />
+    <None Include="Newbe.CQP.Framework\ForMain\Newbe.CQP.Framework.PluginLoader.dll" />
+    <None Include="Newbe.CQP.Framework\ForMain\readme.txt" />
+    <None Include="Newbe.CQP.Framework\ForPlugin\Newbe.CQP.Framework.ApiExporter.dll" />
+    <None Include="Newbe.CQP.Framework\ForPlugin\readme.txt" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>此项目引用这台计算机上缺少的 NuGet 程序包。使用 NuGet 程序包还原可下载这些程序包。有关详细信息，请参阅 http://go.microsoft.com/fwlink/?LinkID=322105。缺少的文件是 {0}。</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('..\packages\Newbe.CQP.Framework.Tools.MSBuildTask.1.1.0\build\Newbe.CQP.Framework.Tools.MSBuildTask.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Newbe.CQP.Framework.Tools.MSBuildTask.1.1.0\build\Newbe.CQP.Framework.Tools.MSBuildTask.props'))" />
+    <Error Condition="!Exists('..\packages\Newbe.CQP.Framework.Tools.MSBuildTask.1.1.0\build\Newbe.CQP.Framework.Tools.MSBuildTask.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Newbe.CQP.Framework.Tools.MSBuildTask.1.1.0\build\Newbe.CQP.Framework.Tools.MSBuildTask.targets'))" />
+  </Target>
+  <Import Project="..\packages\Newbe.CQP.Framework.Tools.MSBuildTask.1.1.0\build\Newbe.CQP.Framework.Tools.MSBuildTask.targets" Condition="Exists('..\packages\Newbe.CQP.Framework.Tools.MSBuildTask.1.1.0\build\Newbe.CQP.Framework.Tools.MSBuildTask.targets')" />
+</Project>
