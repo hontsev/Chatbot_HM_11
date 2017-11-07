@@ -7,7 +7,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TestForm", "TestForm\TestFo
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HM.Eleven.QQPlugins", "HM.Eleven.QQPlugin\HM.Eleven.QQPlugins.csproj", "{53B67B7A-EFB0-437E-9A94-64FD2E167ECF}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WechatConn", "WechatConn\WechatConn.csproj", "{4F95324B-CFDE-4A00-B446-7388CDE0F384}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WechatServer", "WechatServer\WechatServer.csproj", "{08C67A92-F35C-4052-8699-9D93E49614FB}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -23,10 +23,10 @@ Global
 		{53B67B7A-EFB0-437E-9A94-64FD2E167ECF}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{53B67B7A-EFB0-437E-9A94-64FD2E167ECF}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{53B67B7A-EFB0-437E-9A94-64FD2E167ECF}.Release|Any CPU.Build.0 = Release|Any CPU
-		{4F95324B-CFDE-4A00-B446-7388CDE0F384}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{4F95324B-CFDE-4A00-B446-7388CDE0F384}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{4F95324B-CFDE-4A00-B446-7388CDE0F384}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{4F95324B-CFDE-4A00-B446-7388CDE0F384}.Release|Any CPU.Build.0 = Release|Any CPU
+		{08C67A92-F35C-4052-8699-9D93E49614FB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{08C67A92-F35C-4052-8699-9D93E49614FB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{08C67A92-F35C-4052-8699-9D93E49614FB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{08C67A92-F35C-4052-8699-9D93E49614FB}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

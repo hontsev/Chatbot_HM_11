@@ -7,6 +7,7 @@ using System.Web.Http;
 using HM.Eleven.QQPlugins;
 using System.Security.Cryptography;
 using System.Text;
+using WechatConn.App_Start;
 
 namespace WechatConn.Controllers
 {
@@ -122,10 +123,13 @@ namespace WechatConn.Controllers
         }
 
 
-        // POST api/values
-        public HttpResponseMessage Post(string ToUserName, string FromUserName, string CreateTime, string MsgType,string Content, string MsgId)
+
+        public HttpResponseMessage msg([FromBody]RequestXML msg)
         {
-            string xmlstr = FormatTextXML(FromUserName, ToUserName, Content);
+            //string ToUserName, string FromUserName, string CreateTime, string MsgType,string Content, string MsgId
+
+            //string xmlstr = FormatTextXML(msg.FromUserName,msg.ToUserName, msg.Content);
+            string xmlstr = "haha!";
             var result = new StringContent(xmlstr, UTF8Encoding.UTF8, "application/xml charset=\"utf-8\"");
             var response = new HttpResponseMessage { Content = result };
             return response;

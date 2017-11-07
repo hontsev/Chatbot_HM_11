@@ -47,7 +47,7 @@ namespace HM.Eleven.QQPlugins
             //CoolQApi.SendGroupMsg(fromGroup, msg);
             //cc.input(msg, fromGroup);
             //printOutput(new QQInfo("(log)" + msg, 287859992));
-            cc.input(new QQInfo(msg, fromGroup));
+            cc.input(new QQInfo(msg, fromGroup,true));
             return base.ProcessGroupMessage(subType, sendTime, fromGroup, fromQq, fromAnonymous, msg, font);
         }
 
@@ -55,21 +55,25 @@ namespace HM.Eleven.QQPlugins
         {
             long qqnum = info.qq;
             //截断输出内容，分段输出，防止其超过插件限制的字数
-            int maxlen = 500;
-            for (int i = 0; i <= info.info.Length / maxlen; i++)
-            {
-                string tmpstr = "";
-                if (info.info.Length <= i * maxlen + maxlen)
-                {
-                    tmpstr = info.info.Substring(i * maxlen, info.info.Length - i * maxlen);
-                }
-                else
-                {
-                    tmpstr = info.info.Substring(i * maxlen, maxlen);
-                }
-                if (info.isgroup) CoolQApi.SendGroupMsg(qqnum, tmpstr);
-                else CoolQApi.SendPrivateMsg(qqnum, tmpstr);
-            }
+            int maxlen = 50;
+            if (info.info.Length > maxlen) info.info = info.info.Substring(0, maxlen) + "...";
+            if (info.isgroup) CoolQApi.SendGroupMsg(qqnum, info.info);
+            else CoolQApi.SendPrivateMsg(qqnum, info.info);
+
+            //for (int i = 0; i <= info.info.Length / maxlen; i++)
+            //{
+            //    string tmpstr = "";
+            //    if (info.info.Length <= i * maxlen + maxlen)
+            //    {
+            //        tmpstr = info.info.Substring(i * maxlen, info.info.Length - i * maxlen);
+            //    }
+            //    else
+            //    {
+            //        tmpstr = info.info.Substring(i * maxlen, maxlen);
+            //    }
+            //    if (info.isgroup) CoolQApi.SendGroupMsg(qqnum, tmpstr);
+            //    else CoolQApi.SendPrivateMsg(qqnum, tmpstr);
+            //}
 
         }
     }

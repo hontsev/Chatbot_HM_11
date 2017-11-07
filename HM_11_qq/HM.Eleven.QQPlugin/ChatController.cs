@@ -186,10 +186,10 @@ namespace HM.Eleven.QQPlugins
                 if (tmpQQOutput.Count >= 1)
                 {
                     var outputinfo = tmpQQOutput[0];
-                    tmpQQOutput.RemoveAt(0);
                     outputQQEvent(outputinfo);
+                    tmpQQOutput.RemoveAt(0);
                 }
-                Thread.Sleep(200);
+                Thread.Sleep(2000);
             }
         }
     }

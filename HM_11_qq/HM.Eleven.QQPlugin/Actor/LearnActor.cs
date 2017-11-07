@@ -54,6 +54,7 @@ namespace HM.Eleven.QQPlugins.Actor
             items = new List<LearnItem>();
             try
             {
+                if (!File.Exists(path)) File.Create(path);
                 var tmp = File.ReadAllLines(path, Encoding.UTF8);
                 for (int i = 0; i < tmp.Length - 3; i += 4)
                 {
