@@ -13,10 +13,14 @@ namespace HM.Eleven.QQPlugins
     public class MainController : Newbe.CQP.Framework.PluginBase
     {
         public ChatController cc;
+        private long selfQQ;
+        private string selfNick;
+        
         public MainController(ICoolQApi coolQApi) : base(coolQApi)
         {
-            cc = new ChatController();
 
+
+            cc = new ChatController();
             cc.outputQQEvent = new ChatController.sendQQChatMessage(printOutput);
             //cc.outputEvent = new ChatController.sendChatMessageDelegate(printOutput);
             cc.start();
@@ -35,7 +39,7 @@ namespace HM.Eleven.QQPlugins
 
             //}
             //printOutput(new QQInfo("(log)" + msg, 287859992));
-            cc.input(new QQInfo(msg, fromQQ));
+            cc.input(new QQInfo(msg,selfQQ,fromQQ,subType,sendTime,font));
             //printOutput(msg);
             //CoolQApi.SendPrivateMsg(fromQQ, subType+msg[0].ToString());
             
@@ -47,18 +51,19 @@ namespace HM.Eleven.QQPlugins
             //CoolQApi.SendGroupMsg(fromGroup, msg);
             //cc.input(msg, fromGroup);
             //printOutput(new QQInfo("(log)" + msg, 287859992));
-            cc.input(new QQInfo(msg, fromGroup,true));
+            selfNick = CoolQApi.GetLoginNick();
+            selfQQ = CoolQApi.GetLoginQQ();
+            cc.input(new QQInfo(msg, selfQQ, fromQq, subType, sendTime, font, true, fromGroup, fromAnonymous));
             return base.ProcessGroupMessage(subType, sendTime, fromGroup, fromQq, fromAnonymous, msg, font);
         }
 
         private void printOutput(QQInfo info)
         {
-            long qqnum = info.qq;
             //截断输出内容，分段输出，防止其超过插件限制的字数
             int maxlen = 50;
             if (info.info.Length > maxlen) info.info = info.info.Substring(0, maxlen) + "...";
-            if (info.isgroup) CoolQApi.SendGroupMsg(qqnum, info.info);
-            else CoolQApi.SendPrivateMsg(qqnum, info.info);
+            if (info.isGroup) CoolQApi.SendGroupMsg(info.fromQQ, info.info);
+            else CoolQApi.SendPrivateMsg(info.fromQQ, info.info);
 
             //for (int i = 0; i <= info.info.Length / maxlen; i++)
             //{

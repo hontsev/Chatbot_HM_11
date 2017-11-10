@@ -11,20 +11,6 @@ using HM.Eleven.QQPlugins.Actor;
 
 namespace HM.Eleven.QQPlugins
 {
-    public class QQInfo
-    {
-        public string info;
-        public long qq;
-        public string nickname;
-        public bool isgroup;
-
-        public QQInfo(string _info,long _qq,bool _isgroup = false)
-        {
-            info = _info;
-            qq = _qq;
-            isgroup = _isgroup;
-        }
-    }
     public class ChatController
     {
         bool run = true;
@@ -56,6 +42,7 @@ namespace HM.Eleven.QQPlugins
 
         public string getMessageImme(string inputstr)
         {
+            if (!isRelate(new QQInfo(inputstr,0,0))) return "";
             dealSentence(inputstr);
             if (this.tmpOutputSentence.Count > 0)
             {
@@ -95,10 +82,35 @@ namespace HM.Eleven.QQPlugins
             dealSentence(str);
         }
 
-        private bool isRelate(string sentence)
+
+        /// <summary>
+        /// 该语句是否与自己相关？主要用于群聊
+        /// 顺便将判断用的字段删掉
+        /// </summary>
+        /// <param name="info"></param>
+        /// <returns></returns>
+        private bool isRelate(QQInfo info)
         {
-            return sentence.IndexOf("苦瓜") == 0;
+            bool hasat = false;
+            if (info.isGroup)
+            {
+                // at
+                if (CoolQHelper.getAt(info.info) == info.selfQQ) hasat = true;
+                info.info = CoolQHelper.cleanCQAt(info.info);
+            }
+            else
+            {
+                hasat = true;
+            }
+            //Regex reg=new Regex(@"苦瓜")
+            bool hasstr = info.info.IndexOf("苦瓜") == 0;
+            if (hasstr)
+            {
+                info.info = info.info.Substring(2);
+            }
+            return hasat || hasstr;
         }
+
 
         private bool isQuestion(string sentence)
         {
@@ -112,42 +124,42 @@ namespace HM.Eleven.QQPlugins
         public void bkgInput(object oinfo)
         {
             var info = (QQInfo)oinfo;
-            string sentence = info.info;
+            
 
-            if (info.isgroup && !isRelate(sentence)) return;
-            else
-            {
-                if(info.isgroup) sentence = sentence.Substring(2);
-            }
+            if (!isRelate(info)) return;
 
-
-            if (info.info == "-保存学习数据")
+            if (info.info == "-保存")
             {
                 this.la.save();
+                tmpQQOutput.Add(new QQInfo("以保存", info.fromQQ, info.isGroup));
                 return;
             }
-            info.info = sentence;
+            //info.info = sentence;
+            string sentence = info.info;
+
             string res = la.deal(info);
-            if (!string.IsNullOrWhiteSpace(res))
+            if (!string.IsNullOrWhiteSpace(res.Trim()))
             {
-                tmpQQOutput.Add(new QQInfo(res, info.qq, info.isgroup));
+                tmpQQOutput.Add(new QQInfo(res, info.fromQQ, info.isGroup));
                 return;
             }
 
-
+            
             if (isQuestion(sentence))
             {
                 //是问句
+                //tmpQQOutput.Add(new QQInfo("百度："+sentence, info.fromQQ, info.isGroup));
                 sentence = sentence.Substring(0, sentence.Length - 1);
                 string[] answers = BaiduSearchActor.getBaiduKGResult(sentence);
-                if(answers.Length>0)  foreach (var s in answers) tmpQQOutput.Add(new QQInfo(s, info.qq, info.isgroup));
+                if(answers.Length>0)  foreach (var s in answers) tmpQQOutput.Add(new QQInfo(s, info.fromQQ, info.isGroup));
                 else
                 {
                     //没查到
-                    answers = BaiduSearchActor.getBaiduZhidaoAnswers(info.info);
+                    answers = BaiduSearchActor.getBaiduZhidaoAnswers(sentence);
                     foreach (var s in answers)
                     {
-                        tmpQQOutput.Add(new QQInfo(s, info.qq, info.isgroup));// break;
+                        //if (!string.IsNullOrWhiteSpace(s.Trim()))
+                            tmpQQOutput.Add(new QQInfo(s, info.fromQQ, info.isGroup));// break;
                     }
                 }
 

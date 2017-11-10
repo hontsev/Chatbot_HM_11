@@ -197,7 +197,7 @@ namespace HM.Eleven.QQPlugins.Actor
 
                 string question = sentence.Substring(0, sym);
                 string answer = sentence.Substring(sym + 2);
-                string author = info.qq.ToString();
+                string author = info.fromQQ.ToString();
                 addLearn(question, answer, author);
 
                 return res;

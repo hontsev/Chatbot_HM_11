@@ -48,7 +48,7 @@ namespace HM.Eleven.QQPlugins.Actor
         public static string[] getBaiduKGResult(string words)
         {
             List<string> reslist = new List<string>();
-            string askUrl = "http://www.baidu.com/s?wd=" + WebConnectHelper.UrlEncode(words);
+            string askUrl = "https://www.baidu.com/s?wd=" + WebConnectHelper.UrlEncode(words);
             string html = WebConnectHelper.getData(askUrl, Encoding.UTF8);
             HtmlDocument hdoc = new HtmlDocument();
             hdoc.LoadHtml(html);
@@ -224,7 +224,7 @@ namespace HM.Eleven.QQPlugins.Actor
                     var areslist = getBaiduZhidaoAnswersByUrl(dw);
                     if (areslist.Length > 0)
                     {
-                        res.Add(areslist[0]);
+                        res.Add(areslist[0].Trim());
                     }
                     // 暂时只查第一个
                     if (res.Count > 0) break;
