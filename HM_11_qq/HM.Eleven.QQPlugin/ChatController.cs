@@ -13,6 +13,8 @@ namespace HM.Eleven.QQPlugins
 {
     public class ChatController
     {
+        private long masterQQ = 287859992;
+
         bool run = true;
         public List<string> tmpOutputSentence;
         public List<QQInfo> tmpQQOutput;
@@ -128,10 +130,10 @@ namespace HM.Eleven.QQPlugins
 
             if (!isRelate(info)) return;
 
-            if (info.info == "-保存")
+            if (info.info == "-保存" && info.fromQQ == masterQQ)
             {
                 this.la.save();
-                tmpQQOutput.Add(new QQInfo("以保存", info.fromQQ, info.isGroup));
+                tmpQQOutput.Add(new QQInfo("已保存", info.fromQQ, info.isGroup));
                 return;
             }
             //info.info = sentence;
